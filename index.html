@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TrendNest is a premium static frontend prototype for trend discovery, content ideation, and publishing strategy." />
+    <title>TrendNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-glow page-glow-left"></div>
+    <div class="page-glow page-glow-right"></div>
+
+    <header class="site-header" id="home">
+      <nav class="navbar container">
+        <a href="#home" class="brand" aria-label="TrendNest home">
+          <span class="brand-mark">TN</span>
+          <span>
+            <strong>TrendNest</strong>
+            <small>Signal to strategy</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+
+        <div class="nav-links" id="desktopNav">
+          <a href="#overview">Overview</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#trends">Trends</a>
+          <a href="#planner">Planner</a>
+          <a href="#ideas">Ideas</a>
+          <a href="#workspace">Workspace</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+          <a href="#dashboard" class="btn btn-primary">Open Demo</a>
+        </div>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#overview">Overview</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#trends">Trends</a>
+        <a href="#planner">Planner</a>
+        <a href="#ideas">Ideas</a>
+        <a href="#workspace">Workspace</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container section">
+        <div class="hero-copy reveal-up">
+          <div class="eyebrow">Premium trend intelligence for modern media teams</div>
+          <h1>Spot trends earlier. <span>Turn them into content faster.</span></h1>
+          <p>
+            TrendNest helps media teams, creators, and brands discover rising trends, evaluate content opportunities, and build smarter publishing plans in one premium workspace.
+          </p>
+          <div class="hero-actions">
+            <a href="#dashboard" class="btn btn-primary">Open Demo</a>
+            <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+          </div>
+          <div class="hero-stats" id="heroStats"></div>
+        </div>
+
+        <div class="hero-preview card reveal-up">
+          <div class="preview-topline">
+            <span class="status-dot"></span>
+            Live investor demo workspace
+          </div>
+          <div class="preview-grid">
+            <article class="preview-metric glass-panel">
+              <p>Tracked trends</p>
+              <strong>184</strong>
+              <small>+18% this month</small>
+            </article>
+            <article class="preview-metric glass-panel">
+              <p>Avg opportunity</p>
+              <strong>82</strong>
+              <small>High-conviction band</small>
+            </article>
+            <article class="preview-card featured glass-panel">
+              <div class="preview-card-head">
+                <span class="pill">Recommendation</span>
+                <span class="score">91</span>
+              </div>
+              <h3>Executive-friendly AI workflow explainer</h3>
+              <p>Translate high-momentum AI workflow shifts into a polished LinkedIn + YouTube narrative.</p>
+            </article>
+            <article class="preview-card glass-panel">
+              <div class="preview-mini-chart">
+                <span style="height: 32%"></span>
+                <span style="height: 45%"></span>
+                <span style="height: 58%"></span>
+                <span style="height: 66%"></span>
+                <span style="height: 78%"></span>
+                <span style="height: 92%"></span>
+              </div>
+              <small>Momentum over 6 weeks</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="container section" id="overview">
+        <div class="section-header reveal-up">
+          <div class="eyebrow">Product overview</div>
+          <h2>One visual operating system for trends, ideas, planning, and collaboration.</h2>
+          <p>TrendNest feels like a premium SaaS product from the first scroll: dark surfaces, high-clarity cards, rich demo data, and a complete investor-demo story.</p>
+        </div>
+        <div class="feature-grid" id="featureGrid"></div>
+      </section>
+
+      <section class="container section" id="dashboard">
+        <div class="section-header reveal-up">
+          <div class="eyebrow">Dashboard preview</div>
+          <h2>A polished analytics surface for signal velocity and publishing readiness.</h2>
+          <p>Built entirely with HTML, CSS, and lightweight visuals, this section simulates a premium SaaS dashboard without any framework or backend.</p>
+        </div>
+        <div class="dashboard-grid">
+          <div class="kpi-grid" id="kpiGrid"></div>
+          <article class="card dashboard-card wide reveal-up">
+            <div class="card-head">
+              <div>
+                <h3>Trend momentum</h3>
+                <p>Momentum and content readiness across the last seven days.</p>
+              </div>
+              <span class="pill">Updated live</span>
+            </div>
+            <div class="line-chart" id="lineChart"></div>
+          </article>
+          <article class="card dashboard-card reveal-up">
+            <div class="card-head">
+              <div>
+                <h3>Opportunity mix</h3>
+                <p>Category concentration this week.</p>
+              </div>
+            </div>
+            <div class="donut-wrap">
+              <div class="donut-chart"></div>
+              <div class="legend" id="categoryLegend"></div>
+            </div>
+          </article>
+          <article class="card dashboard-card reveal-up">
+            <div class="card-head">
+              <div>
+                <h3>Watchlist</h3>
+                <p>Signals your team is monitoring.</p>
+              </div>
+            </div>
+            <div class="stack-list" id="watchlistCards"></div>
+          </article>
+          <article class="card dashboard-card reveal-up">
+            <div class="card-head">
+              <div>
+                <h3>Recommended directions</h3>
+                <p>High-conviction ideas based on trend scoring.</p>
+              </div>
+            </div>
+            <div class="stack-list" id="recommendations"></div>
+          </article>
+          <article class="card dashboard-card reveal-up">
+            <div class="card-head">
+              <div>
+                <h3>Recent campaigns</h3>
+                <p>Current initiatives in motion.</p>
+              </div>
+            </div>
+            <div class="stack-list" id="campaignList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section" id="trends">
+        <div class="section-header reveal-up">
+          <div class="eyebrow">Trends explorer</div>
+          <h2>Search, filter, and evaluate rising trends in one elegant workspace.</h2>
+          <p>Each trend card includes category context, momentum, audience fit, content potential, format recommendations, and a richer modal view.</p>
+        </div>
+        <div class="toolbar reveal-up">
+          <div class="search-wrap">
+            <input type="search" id="trendSearch" placeholder="Search trends, tags, or descriptions" />
+          </div>
+          <div class="chip-row" id="trendCategoryFilters"></div>
+        </div>
+        <div class="trends-grid" id="trendGrid"></div>
+      </section>
+
+      <section class="container section" id="planner">
+        <div class="section-header reveal-up">
+          <div class="eyebrow">Publishing planner</div>
+          <h2>Organize weekly output with a premium planning layout.</h2>
+          <p>A polished content planning section with statuses, day columns, and a lightweight add-content interaction powered by vanilla JavaScript.</p>
+        </div>
+        <div class="section-actions reveal-up">
+          <div class="chip-row static-row">
+            <span class="chip active">Brand: TrendNest Media</span>
+            <span class="chip">Channel: All</span>
+            <span class="chip">Week of April 14</span>
+          </div>
+          <button class="btn btn-primary" id="openPlannerModal">Add Content</button>
+        </div>
+        <div class="planner-grid" id="plannerGrid"></div>
+      </section>
+
+      <section class="container section" id="ideas">
+        <div class="section-header reveal-up">
+          <div class="eyebrow">Ideas generator</div>
+          <h2>Turn promising signals into polished content concepts.</h2>
+          <p>Filter by tone and topic, then save, duplicate, or move ideas into the planner using instant frontend-only interactions.</p>
+        </div>
+        <div class="toolbar reveal-up">
+          <div class="chip-row" id="ideaToneFilters"></div>
+          <div class="chip-row static-row">
+            <span class="chip active">Topic: Signal Strategy</span>
+            <span class="chip">Platform mix</span>
+            <span class="chip">Investor demo ready</span>
+          </div>
+        </div>
+        <div class="ideas-grid" id="ideasGrid"></div>
+      </section>
+
+      <section class="container section" id="workspace">
+        <div class="section-header reveal-up">
+          <div class="eyebrow">Workspace</div>
+          <h2>A collaborative media operations space for campaigns, notes, and team alignment.</h2>
+          <p>This section presents the product as a realistic shared workspace, with project health, campaign activity, notes, and team roles.</p>
+        </div>
+        <div class="workspace-grid">
+          <article class="card reveal-up">
+            <div class="card-head"><div><h3>Active projects</h3><p>Current initiatives and delivery health.</p></div></div>
+            <div class="stack-list" id="projectList"></div>
+          </article>
+          <article class="card reveal-up">
+            <div class="card-head"><div><h3>Team members</h3><p>Roles contributing to the workflow.</p></div></div>
+            <div class="stack-list" id="teamList"></div>
+          </article>
+          <article class="card reveal-up">
+            <div class="card-head"><div><h3>Shared notes</h3><p>Editorial direction and campaign cues.</p></div></div>
+            <div class="stack-list" id="notesList"></div>
+          </article>
+          <article class="card reveal-up">
+            <div class="card-head"><div><h3>Recent activity</h3><p>The latest changes inside the workspace.</p></div></div>
+            <div class="stack-list" id="activityList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section" id="pricing">
+        <div class="section-header reveal-up">
+          <div class="eyebrow">Pricing</div>
+          <h2>Premium pricing for creators, teams, and enterprise programs.</h2>
+          <p>Investor-ready pricing presentation with elegant cards, monthly/yearly toggle, and a highlighted Pro plan.</p>
+        </div>
+        <div class="billing-toggle reveal-up">
+          <button class="toggle-option active" data-billing="monthly">Monthly</button>
+          <button class="toggle-option" data-billing="yearly">Yearly</button>
+        </div>
+        <div class="pricing-grid" id="pricingGrid"></div>
+      </section>
+
+      <section class="container section" id="faq">
+        <div class="section-header reveal-up">
+          <div class="eyebrow">FAQ</div>
+          <h2>Answers for demos, reviews, and GitHub Pages deployment.</h2>
+          <p>Everything about TrendNest is intentionally frontend-only and ready for plain static hosting.</p>
+        </div>
+        <div class="faq-list" id="faqList"></div>
+      </section>
+
+      <section class="container section final-cta reveal-up">
+        <div class="card cta-card">
+          <div class="eyebrow">Final CTA</div>
+          <h2>Open a premium investor-demo website the moment GitHub Pages loads.</h2>
+          <p>TrendNest is designed so the deployed GitHub Pages URL immediately shows the real product story from <code>index.html</code> — not documentation, not a broken app, and not a README page.</p>
+          <div class="hero-actions">
+            <a href="#dashboard" class="btn btn-primary">Open Demo</a>
+            <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand footer-brand">
+            <span class="brand-mark">TN</span>
+            <span>
+              <strong>TrendNest</strong>
+              <small>Signal to strategy</small>
+            </span>
+          </div>
+          <p>Premium frontend-only static prototype for trend discovery, idea generation, planning, and collaboration.</p>
+        </div>
+        <div>
+          <h4>Sections</h4>
+          <a href="#overview">Overview</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#trends">Trends</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+        <div>
+          <h4>Deployment</h4>
+          <p>Upload <code>index.html</code>, <code>style.css</code>, and <code>script.js</code> to GitHub and enable Pages.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal hidden" id="modalOverlay" aria-hidden="true">
+      <div class="modal-card">
+        <button class="modal-close" id="closeModal" aria-label="Close modal">×</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <div class="modal hidden" id="plannerModalOverlay" aria-hidden="true">
+      <div class="modal-card modal-small">
+        <button class="modal-close" id="closePlannerModal" aria-label="Close modal">×</button>
+        <div class="modal-title-wrap">
+          <div class="eyebrow">Planner item</div>
+          <h3>Add content to the weekly plan</h3>
+        </div>
+        <form id="plannerForm" class="planner-form">
+          <input type="text" name="title" placeholder="Content title" required />
+          <input type="text" name="channel" placeholder="Channel" required />
+          <select name="column">
+            <option value="draft">Draft</option>
+            <option value="planned">Planned</option>
+            <option value="approved">Approved</option>
+            <option value="scheduled">Scheduled</option>
+          </select>
+          <button type="submit" class="btn btn-primary form-submit">Create item</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast-stack" id="toastStack"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
